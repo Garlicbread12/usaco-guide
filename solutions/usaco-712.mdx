@@ -27,6 +27,32 @@ time.
 
 <LanguageSection>
 
+<PySection>
+	
+```python	
+with open('circlecross.in','r') as fin:
+	crossmap = fin.readline().strip()
+	chardict = {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [],\
+	 'H': [], 'I': [], 'J': [],'K': [], 'L': [], 'M': [], 'N': [], 'O': [],\
+	 'P': [], 'Q': [],'R': [], 'S': [], 'T': [], 'U': [], 'V': [],\
+	  'W': [], 'X': [], 'Y': [], 'Z': []}
+
+	for i in range(len(crossmap)):
+		chardict[crossmap[i]].append(i)
+	count = 0
+	for f in chardict:#first char
+		for s in chardict:#second char
+			if chardict[f][0] < chardict[s][0]\
+			and chardict[s][0] < chardict[f][1]\
+			and chardict[f][1] < chardict[s][1]:
+				count += 1
+	fout = open('circlecross.out','w')
+	fout.write(str(count))
+	fout.close()
+```
+	
+</PySection>
+
 <CPPSection>
 
 ```cpp
